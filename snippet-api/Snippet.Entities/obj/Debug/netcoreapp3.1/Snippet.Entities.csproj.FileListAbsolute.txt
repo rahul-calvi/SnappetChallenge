@@ -1,0 +1,8 @@
+D:\MyProjects\SnappetChallenge\snippet-api\Snippet.Entities\bin\Debug\netcoreapp3.1\Snippet.Entities.deps.json
+D:\MyProjects\SnappetChallenge\snippet-api\Snippet.Entities\bin\Debug\netcoreapp3.1\Snippet.Entities.dll
+D:\MyProjects\SnappetChallenge\snippet-api\Snippet.Entities\bin\Debug\netcoreapp3.1\Snippet.Entities.pdb
+D:\MyProjects\SnappetChallenge\snippet-api\Snippet.Entities\obj\Debug\netcoreapp3.1\Snippet.Entities.AssemblyInfoInputs.cache
+D:\MyProjects\SnappetChallenge\snippet-api\Snippet.Entities\obj\Debug\netcoreapp3.1\Snippet.Entities.AssemblyInfo.cs
+D:\MyProjects\SnappetChallenge\snippet-api\Snippet.Entities\obj\Debug\netcoreapp3.1\Snippet.Entities.csproj.CoreCompileInputs.cache
+D:\MyProjects\SnappetChallenge\snippet-api\Snippet.Entities\obj\Debug\netcoreapp3.1\Snippet.Entities.dll
+D:\MyProjects\SnappetChallenge\snippet-api\Snippet.Entities\obj\Debug\netcoreapp3.1\Snippet.Entities.pdb

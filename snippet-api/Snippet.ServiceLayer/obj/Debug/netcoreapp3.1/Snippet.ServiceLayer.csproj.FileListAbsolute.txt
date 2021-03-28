@@ -1,0 +1,12 @@
+D:\MyProjects\SnappetChallenge\snippet-api\Snippet.ServiceLayer\bin\Debug\netcoreapp3.1\Snippet.ServiceLayer.deps.json
+D:\MyProjects\SnappetChallenge\snippet-api\Snippet.ServiceLayer\bin\Debug\netcoreapp3.1\Snippet.ServiceLayer.dll
+D:\MyProjects\SnappetChallenge\snippet-api\Snippet.ServiceLayer\bin\Debug\netcoreapp3.1\Snippet.ServiceLayer.pdb
+D:\MyProjects\SnappetChallenge\snippet-api\Snippet.ServiceLayer\bin\Debug\netcoreapp3.1\Snippet.Entities.dll
+D:\MyProjects\SnappetChallenge\snippet-api\Snippet.ServiceLayer\bin\Debug\netcoreapp3.1\Snippet.Entities.pdb
+D:\MyProjects\SnappetChallenge\snippet-api\Snippet.ServiceLayer\obj\Debug\netcoreapp3.1\Snippet.ServiceLayer.csprojAssemblyReference.cache
+D:\MyProjects\SnappetChallenge\snippet-api\Snippet.ServiceLayer\obj\Debug\netcoreapp3.1\Snippet.ServiceLayer.AssemblyInfoInputs.cache
+D:\MyProjects\SnappetChallenge\snippet-api\Snippet.ServiceLayer\obj\Debug\netcoreapp3.1\Snippet.ServiceLayer.AssemblyInfo.cs
+D:\MyProjects\SnappetChallenge\snippet-api\Snippet.ServiceLayer\obj\Debug\netcoreapp3.1\Snippet.ServiceLayer.csproj.CoreCompileInputs.cache
+D:\MyProjects\SnappetChallenge\snippet-api\Snippet.ServiceLayer\obj\Debug\netcoreapp3.1\Snippet.ServiceLayer.csproj.CopyComplete
+D:\MyProjects\SnappetChallenge\snippet-api\Snippet.ServiceLayer\obj\Debug\netcoreapp3.1\Snippet.ServiceLayer.dll
+D:\MyProjects\SnappetChallenge\snippet-api\Snippet.ServiceLayer\obj\Debug\netcoreapp3.1\Snippet.ServiceLayer.pdb
