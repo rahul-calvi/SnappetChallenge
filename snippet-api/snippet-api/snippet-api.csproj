@@ -10,12 +10,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
+    <ProjectReference Include="..\Snippet.Entities\Snippet.Entities.csproj" />
+    <ProjectReference Include="..\Snippet.ServiceLayer\Snippet.ServiceLayer.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Snippet.Entities\Snippet.Entities.csproj" />
-    <ProjectReference Include="..\Snippet.ServiceLayer\Snippet.ServiceLayer.csproj" />
+    <Folder Include="Models\" />
   </ItemGroup>
 
 

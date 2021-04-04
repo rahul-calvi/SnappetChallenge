@@ -1,0 +1,24 @@
+<div>
+    <table class="table table-hover">
+       <thead>
+        <tr>
+            <th>Student Id</th>
+            <th>Progress</th>
+            <th>Correct</th>
+            <th>Subject </th>
+            <th>Domain </th>
+            <th>Submit datetime</th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr *ngFor = "let summary of summaryList">
+            <td><a [routerLink] ="['/studentsummary',summary.userId]"> {{summary.userId}}</a></td>
+            <td>{{summary.progress}}</td>
+            <td>{{summary.correct}}</td>
+            <td>{{summary.subject}}</td>
+            <td>{{summary.domain}}</td>
+            <td>{{summary.submitDateTime}}</td>
+        </tr>
+       </tbody>
+    </table>
+</div>

@@ -1,5 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Snippet.Entities;
 using Snippet.ServiceLayer;
+using Snippet.ServiceLayer.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace snippet_api.Controllers
 {
@@ -7,7 +12,7 @@ namespace snippet_api.Controllers
     [Route("[controller]")]
     public class SummaryController : ControllerBase
     {
-        
+
         public ISummaryService SummaryService { get; set; }
 
         public SummaryController(ISummaryService summaryService)
@@ -18,9 +23,34 @@ namespace snippet_api.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(SummaryService.LoadAllSummary());
+            return Ok(SummaryService.LoadAllSummary().Take(100));
         }
 
-        
+        [Route("subjects")]
+        public IActionResult GetAllSubjects()
+        {
+            return Ok(SummaryService.LoadAllSubjects());
+        }
+
+        [Route("domains")]
+        public IActionResult GetAllDomains()
+        {
+            IEnumerable<string> domains = SummaryService.LoadAllDomains().Select(item=>item.name);
+            return Ok(domains);
+        }
+
+        [Route("studentsummary")]
+        public IActionResult GetStudentSummary(int studentId)
+        {
+            StudentSummary studentSummary = SummaryService.LoadStudentSummary(studentId);
+            return Ok(studentSummary);
+        }
+
+        [Route("summarybydate")]
+        public IActionResult GetSummaryByDate(DateTime? date)
+        {
+            IEnumerable<SubjectSummaryViewModel> summaries = SummaryService.LoadSummaryByDate(date);
+            return Ok(summaries);
+        }
     }
 }
