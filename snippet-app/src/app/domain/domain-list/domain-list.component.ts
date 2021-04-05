@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Domain } from 'src/app/models/domain.model';
 import { SummaryService } from 'src/app/services/summary.service';
 
 @Component({

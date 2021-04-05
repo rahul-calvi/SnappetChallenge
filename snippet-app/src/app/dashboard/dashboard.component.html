@@ -1,4 +1,32 @@
-<div class="float-right mr-3">
-    <label class="mr-3"><strong>Date</strong></label>
-    <input class="mr-3" type="date" (change)="onDateChanged()" [(ngModel)]="date"/>
+<div>
+    <div class="float-right mr-3">
+        <label class="mr-3"><strong>Date</strong></label>
+        <input class="mr-3" type="date" (change)="onDateChanged()" [(ngModel)]="date"/>
+    </div>
 </div>
+
+<div *ngIf="showSummary">
+    <div class="mt-4" *ngFor="let sum of summary" >
+        <h4><a [routerLink] ="['/domainsummary',date,sum.subject]">{{sum.subject}} </a></h4>
+        <div class="total-progress" *ngIf="sum.totalProgress >=0 ">
+            <h5>Total Progress</h5>
+            <div class="progress" style="height: 35px; " >
+                <div class="progress-bar" role="progressbar" [attr.style]="'width:' + sum.totalProgress/75 +'%' " aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{sum.totalProgress}}</div>
+            </div>
+        </div>
+        <p class="text-danger" *ngIf="sum.totalProgress < 0 "><strong> Total progress is {{sum.totalProgress}}</strong></p>
+       
+        <div class="todays-progress" *ngIf="sum.progressToday >=0 ">
+            <h5>Today's Progress</h5>
+            <div class="progress" style="height: 35px;">
+                <div class="progress-bar" role="progressbar" [attr.style]="'width:' + sum.progressToday/75 +'%' " aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{sum.progressToday}}</div>
+            </div>
+        </div>
+        <p class="text-danger" *ngIf="sum.progressToday <0 "><strong>Today's progress is {{sum.progressToday}}</strong></p>
+    </div>
+</div>
+
+
+<app-domain-summary [date]="date" [subject]="subject" *ngIf="showDomainSummary">
+
+</app-domain-summary>

@@ -105,13 +105,31 @@ namespace Snippet.ServiceLayer
             IEnumerable<Summary> summariesList = summaries.Where(item => item.SubmitDateTime.Date == date.Value.Date).ToList();
             IEnumerable<Summary> totalSummariesTillDate = summaries.Where(item => item.SubmitDateTime.Date <= date.Value.Date).ToList();
             var groupBySubject = totalSummariesTillDate.GroupBy(item => item.Subject);
-            List<SubjectSummaryViewModel> subjectSummaryViews = groupBySubject.Select(item => new SubjectSummaryViewModel() { Subject = item.Key, TotalProgress = item.Sum(p => p.Progress) }).ToList();
-            foreach (SubjectSummaryViewModel subjectSummaryViewModel in subjectSummaryViews)
+            List<SubjectSummaryViewModel> subjectSummary = groupBySubject.Select(item => new SubjectSummaryViewModel() { Subject = item.Key, TotalProgress = item.Sum(p => p.Progress) }).ToList();
+            foreach (SubjectSummaryViewModel subjectSummaryViewModel in subjectSummary)
             {
                 subjectSummaryViewModel.ProgressToday = summariesList.Where(item => item.Subject == subjectSummaryViewModel.Subject).Sum(p => p.Progress);
             }
 
-            return subjectSummaryViews;
+            return subjectSummary;
+        }
+
+        public IEnumerable<DomainSummaryViewModel> LoadDomainSummary(DateTime? date, string subject = null)
+        {
+            summaries ??= LoadJson();
+
+            IEnumerable<Summary> summariesList = summaries.Where(item => item.SubmitDateTime.Date == date.Value.Date && item.Subject == subject).ToList();
+            IEnumerable<Summary> totalSummariesTillDate = summaries.Where(item => item.SubmitDateTime.Date <= date.Value.Date && item.Subject == subject).ToList();
+            var groupBySubject = totalSummariesTillDate.GroupBy(item => item.Domain);
+            
+            List<DomainSummaryViewModel> domainSummary = groupBySubject.Select(item => new DomainSummaryViewModel() { Domain = item.Key, TotalProgress = item.Sum(p => p.Progress) }).ToList();
+            foreach (DomainSummaryViewModel subjectSummaryViewModel in domainSummary)
+            {
+                subjectSummaryViewModel.ProgressToday = summariesList.Where(item => item.Subject == subjectSummaryViewModel.Domain).Sum(p => p.Progress);
+            }
+
+            return domainSummary;
+
         }
 
         #endregion

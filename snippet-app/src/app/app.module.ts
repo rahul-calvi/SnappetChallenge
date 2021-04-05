@@ -12,13 +12,16 @@ import { SubjectListComponent } from './subjects/subject-list/subject-list.compo
 import { StudentSummaryComponent } from './student/student-summary/student-summary.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
+import { LearningObjectiveComponent } from './learning-objective/learning-objective.component';
+import { DomainSummaryComponent } from './domain/domain-summary/domain-summary.component';
 
 const appRoutes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'students', component: StudentListComponent },
   { path: 'domains', component: DomainListComponent },
   { path: 'subjects', component: SubjectListComponent },
-  { path: 'studentsummary/:id', component: StudentSummaryComponent }
+  { path: 'studentsummary/:id', component: StudentSummaryComponent },
+  { path: 'domainsummary/:date/:subject', component: DomainSummaryComponent }
 ];
 
 @NgModule({
@@ -29,7 +32,9 @@ const appRoutes: Routes = [
     SubjectListComponent,
     DomainListComponent,
     StudentSummaryComponent,
-    DashboardComponent
+    DashboardComponent,
+    LearningObjectiveComponent,
+    DomainSummaryComponent
   ],
   imports: [
     BrowserModule,

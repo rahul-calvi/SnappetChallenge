@@ -8,30 +8,42 @@ import { SubjectSummary } from '../models/subject-summary.model';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit, OnChanges {
-  public date: string = "2015-03-01";
-  public summary:SubjectSummary;
+export class DashboardComponent implements OnInit {
+  public date: string;
+  public progressName:string= 'width:100%' ;
+  public subject:string='';
+  public showDomainSummary:boolean =false;
+  public showSummary:boolean = true;
+  public summary:SubjectSummary[]=[];
   constructor(private summarySerice:SummaryService) {
-    this.summary = new SubjectSummary();
-
+   
+    let storedDate = localStorage.getItem("date");
+    this.date = storedDate==null?"2015-03-01":storedDate.toString();
+  
    }
 
-  
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.date);
-  }
-
-  ngOnInit(): void {
-    
+   ngOnInit(): void {
+    this.loadData();
   }
 
   public onDateChanged () {
-    console.log(this.date)
+   this.loadData();
+   localStorage.setItem("date",this.date);
+  }
+
+  private loadData(){
     this.summarySerice.getSummaryByDate(this.date).subscribe((summary)=>{
       this.summary = summary;
-      console.log(this.summary);
     });
+  }
 
+  /**
+   * name
+   */
+  public progressBarClick(subject:string,date:string) {
+    this.subject = subject;
+    this.showDomainSummary = true;
+    this.showSummary = false;
   }
 
 }

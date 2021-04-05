@@ -38,5 +38,8 @@ namespace Snippet.ServiceLayer
         /// <param name="dateTime">DateTime</param>
         /// <returns>List of summary</returns>
         IEnumerable<SubjectSummaryViewModel> LoadSummaryByDate(DateTime? dateTime);
+
+
+        IEnumerable<DomainSummaryViewModel> LoadDomainSummary(DateTime? date, string subject);
     }
 }

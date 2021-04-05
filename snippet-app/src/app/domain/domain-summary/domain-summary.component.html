@@ -1,0 +1,22 @@
+<div class="mt-4" *ngFor="let domain of domainSummary" >
+    <h4>{{domain.domain}}</h4>
+    <div class="total-progress" *ngIf="domain.totalProgress >=0 ">
+        <h5>Total Progress</h5>
+        <div class="progress" style="height: 35px; cursor:pointer;" >
+            <div class="progress-bar" role="progressbar" [attr.style]="'width:' + domain.totalProgress/75 +'%' " aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{domain.totalProgress}}</div>
+        </div>
+    </div>
+    <p class="text-danger" *ngIf="domain.totalProgress < 0 "><strong> Total progress is {{domain.totalProgress}}</strong></p>
+   
+    <div class="todays-progress" *ngIf="domain.progressToday >=0 ">
+        <h5>Today's Progress</h5>
+        <div class="progress" style="height: 35px;cursor:pointer;">
+            <div class="progress-bar" role="progressbar" [attr.style]="'width:' + domain.progressToday/75 +'%' " aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{domain.progressToday}}</div>
+        </div>
+    </div>
+    <p class="text-danger" *ngIf="domain.progressToday < 0 "><strong>Today's progress is {{domain.progressToday}}</strong></p>
+</div>
+
+<div>
+    <button class="btn btn-link" routerLink="/">Go Back</button>
+</div>

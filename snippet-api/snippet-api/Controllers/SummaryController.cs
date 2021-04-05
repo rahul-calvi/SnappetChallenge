@@ -52,5 +52,12 @@ namespace snippet_api.Controllers
             IEnumerable<SubjectSummaryViewModel> summaries = SummaryService.LoadSummaryByDate(date);
             return Ok(summaries);
         }
+
+        [Route("domainsummary")]
+        public IActionResult GetDomainSummary(DateTime? date,string subject)
+        {
+            IEnumerable<DomainSummaryViewModel> summaries = SummaryService.LoadDomainSummary(date,subject);
+            return Ok(summaries);
+        }
     }
 }
