@@ -1,5 +1,6 @@
+<h2 class="heading " >Summary for subject {{subject}}</h2>
 <div class="mt-4" *ngFor="let domain of domainSummary" >
-    <h4>{{domain.domain}}</h4>
+    <h4><a [routerLink] ="['/learningobjectivesummary',date,domain.domain]">{{domain.domain}}</a></h4>
     <div class="total-progress" *ngIf="domain.totalProgress >=0 ">
         <h5>Total Progress</h5>
         <div class="progress" style="height: 35px; cursor:pointer;" >
@@ -18,5 +19,5 @@
 </div>
 
 <div>
-    <button class="btn btn-link" routerLink="/">Go Back</button>
+    <a class="btn btn-link" routerLink="/">Go Back</a>
 </div>

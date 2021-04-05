@@ -59,5 +59,12 @@ namespace snippet_api.Controllers
             IEnumerable<DomainSummaryViewModel> summaries = SummaryService.LoadDomainSummary(date,subject);
             return Ok(summaries);
         }
+
+        [Route("learningobjectivesummary")]
+        public IActionResult GetLearningObjectiveSummary(DateTime? date, string domain)
+        {
+            IEnumerable<LearningObjectiveSummaryViewModel> summaries = SummaryService.LoadLearningObjectives(date, domain);
+            return Ok(summaries);
+        }
     }
 }

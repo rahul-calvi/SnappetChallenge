@@ -6,3 +6,4 @@ D:\MyProjects\SnappetChallenge\snippet-api\Snippet.Entities\obj\Debug\netcoreapp
 D:\MyProjects\SnappetChallenge\snippet-api\Snippet.Entities\obj\Debug\netcoreapp3.1\Snippet.Entities.csproj.CoreCompileInputs.cache
 D:\MyProjects\SnappetChallenge\snippet-api\Snippet.Entities\obj\Debug\netcoreapp3.1\Snippet.Entities.dll
 D:\MyProjects\SnappetChallenge\snippet-api\Snippet.Entities\obj\Debug\netcoreapp3.1\Snippet.Entities.pdb
+D:\MyProjects\SnappetChallenge\snippet-api\Snippet.Entities\obj\Debug\netcoreapp3.1\Snippet.Entities.csprojAssemblyReference.cache

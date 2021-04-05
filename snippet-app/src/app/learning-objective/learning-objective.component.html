@@ -1,1 +1,23 @@
-<p>learning-objective works!</p>
+<h2 class="heading " >Summary for Domain {{domain}}</h2>
+<div class="mt-4" *ngFor="let learningObjective of learningObjectiveSummary" >
+    <h4>{{learningObjective.learningObjective}}</h4>
+    <div class="total-progress" *ngIf="learningObjective.totalProgress >=0 ">
+        <h5>Total Progress</h5>
+        <div class="progress" style="height: 35px;" >
+            <div class="progress-bar" role="progressbar" [attr.style]="'width:' + learningObjective.totalProgress/10 +'%' " >{{learningObjective.totalProgress}}</div>
+        </div>
+    </div>
+    <p class="text-danger" *ngIf="learningObjective.totalProgress < 0 "><strong> Total progress is {{learningObjective.totalProgress}}</strong></p>
+   
+    <div class="todays-progress" *ngIf="learningObjective.progressToday >=0 ">
+        <h5>Today's Progress</h5>
+        <div class="progress" style="height: 35px;">
+            <div class="progress-bar" role="progressbar" [attr.style]="'width:' + learningObjective.progressToday/10 +'%' ">{{learningObjective.progressToday}}</div>
+        </div>
+    </div>
+    <p class="text-danger" *ngIf="learningObjective.progressToday < 0 "><strong>Today's progress is {{learningObjective.progressToday}}</strong></p>
+</div>
+
+<div>
+    <a class="btn btn-link" [routerLink] ="['/domainsummary',date,subject]">Go Back</a>
+</div>

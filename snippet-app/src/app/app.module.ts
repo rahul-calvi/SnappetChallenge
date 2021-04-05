@@ -21,7 +21,8 @@ const appRoutes: Routes = [
   { path: 'domains', component: DomainListComponent },
   { path: 'subjects', component: SubjectListComponent },
   { path: 'studentsummary/:id', component: StudentSummaryComponent },
-  { path: 'domainsummary/:date/:subject', component: DomainSummaryComponent }
+  { path: 'domainsummary/:date/:subject', component: DomainSummaryComponent },
+  { path: 'learningobjectivesummary/:date/:domain', component: LearningObjectiveComponent }
 ];
 
 @NgModule({
@@ -34,7 +35,7 @@ const appRoutes: Routes = [
     StudentSummaryComponent,
     DashboardComponent,
     LearningObjectiveComponent,
-    DomainSummaryComponent
+    DomainSummaryComponent,
   ],
   imports: [
     BrowserModule,

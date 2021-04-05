@@ -1,8 +1,8 @@
 ﻿namespace Snippet.ServiceLayer.Models
 {
-    public class DomainSummaryViewModel
+    public class LearningObjectiveSummaryViewModel
     {
-        public string Domain { get; set; }
+        public string LearningObjective { get; set; }
 
         public int TotalProgress { get; set; }
 

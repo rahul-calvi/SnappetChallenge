@@ -125,11 +125,28 @@ namespace Snippet.ServiceLayer
             List<DomainSummaryViewModel> domainSummary = groupBySubject.Select(item => new DomainSummaryViewModel() { Domain = item.Key, TotalProgress = item.Sum(p => p.Progress) }).ToList();
             foreach (DomainSummaryViewModel subjectSummaryViewModel in domainSummary)
             {
-                subjectSummaryViewModel.ProgressToday = summariesList.Where(item => item.Subject == subjectSummaryViewModel.Domain).Sum(p => p.Progress);
+                subjectSummaryViewModel.ProgressToday = summariesList.Where(item => item.Domain == subjectSummaryViewModel.Domain).Sum(p => p.Progress);
             }
 
             return domainSummary;
 
+        }
+
+        public IEnumerable<LearningObjectiveSummaryViewModel> LoadLearningObjectives(DateTime? date, string domain  = null)
+        {
+            summaries ??= LoadJson();
+
+            IEnumerable<Summary> summariesList = summaries.Where(item => item.SubmitDateTime.Date == date.Value.Date && item.Domain == domain).ToList();
+            IEnumerable<Summary> totalSummariesTillDate = summaries.Where(item => item.SubmitDateTime.Date <= date.Value.Date && item.Domain == domain).ToList();
+            var groupBySubject = totalSummariesTillDate.GroupBy(item => item.LearningObjective);
+
+            List<LearningObjectiveSummaryViewModel> learningObjectives = groupBySubject.Select(item => new LearningObjectiveSummaryViewModel() { LearningObjective = item.Key, TotalProgress = item.Sum(p => p.Progress) }).ToList();
+            foreach (LearningObjectiveSummaryViewModel subjectSummaryViewModel in learningObjectives)
+            {
+                subjectSummaryViewModel.ProgressToday = summariesList.Where(item => item.LearningObjective == subjectSummaryViewModel.LearningObjective).Sum(p => p.Progress);
+            }
+
+            return learningObjectives;
         }
 
         #endregion

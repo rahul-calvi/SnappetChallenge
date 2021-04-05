@@ -41,5 +41,8 @@ namespace Snippet.ServiceLayer
 
 
         IEnumerable<DomainSummaryViewModel> LoadDomainSummary(DateTime? date, string subject);
+
+
+        IEnumerable<LearningObjectiveSummaryViewModel> LoadLearningObjectives(DateTime? date, string domain = null);
     }
 }

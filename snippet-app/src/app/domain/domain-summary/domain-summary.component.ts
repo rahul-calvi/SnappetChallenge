@@ -10,14 +10,15 @@ import { SummaryService } from 'src/app/services/summary.service';
 })
 export class DomainSummaryComponent implements OnInit {
 
-  @Input() subject:string ='';
-  @Input() date:string ='';
+  subject:string ='';
+  date:string ='';
   public domainSummary:DomainSummary[]=[];
   constructor(private summarService: SummaryService,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.subject = this.route.snapshot.params['subject'];
     this.date = this.route.snapshot.params['date'];
+    localStorage.setItem('subject',this.subject);
     this.summarService.getDomainSummary(this.date,this.subject).subscribe((item)=>{
       this.domainSummary = item;
     });

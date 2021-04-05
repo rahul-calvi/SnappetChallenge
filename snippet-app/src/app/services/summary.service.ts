@@ -5,6 +5,7 @@ import { Summary } from "../models/summary.model";
 import { StudentSummary } from "../models/student-summary.model";
 import { SubjectSummary } from "../models/subject-summary.model";
 import { DomainSummary } from "../models/domain-summary.model";
+import { LearningObjectiveSummary } from "../models/learning-objective-summary.model";
 
 @Injectable()
 export class SummaryService {
@@ -42,7 +43,7 @@ export class SummaryService {
     }
 
     getLearningObjectivesSumary(date:string,domain:string) {
-        return this.http.get<SubjectSummary[]>(environment.apiEndPoint + '/summary/learningobjectivesummary',{
+        return this.http.get<LearningObjectiveSummary[]>(environment.apiEndPoint + '/summary/learningobjectivesummary',{
             params:new HttpParams().set('date', String(date)).set('domain',domain)
         });
     }
